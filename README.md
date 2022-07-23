@@ -1,6 +1,9 @@
 # Key Reinstallation Attack
 ## Presented by Ron, Afik, Shmuel & Avigael
 
+### Demonstration:
+![UnderAttack](media/demo.gif)
+
 ## Prerequisites
 
 * Kali Linux, required dependencies:
@@ -26,7 +29,7 @@ pip install mitm_channel_based, pyfiglet, termcolor
 1. `Attacking Computer`: Xiaomi Redmibook 14 
 2. `OS`: Kali Linux Live CD
 3. `Injection Network Adapter`: TP-Link TL-WN722N V1
-4. `Eth Internet Adapter`: Samsung Galaxy S9 / iPhone 8 connected physically to provide internet 
+4. `Eth Internet Adapter`: Samsung Galaxy S9 / iPhone 8 serves as an ethernet router via usb thethering
 5. `Victim Host Network`: Samsung Galaxy S9 Hotspot
 6. `Victim Device`: Samsung Galaxy J7 running Android 6.0.1
 
@@ -38,11 +41,11 @@ pip install mitm_channel_based, pyfiglet, termcolor
 2. Enter the krackattack folder and run the attack from this path:
   ```
   cd krackattack
-  $sudo ./krack_all_zero_tk.py wlan1 wlan0 eth0 "Shabab" -t 88:83:22:82:93:CC
+  $sudo ./attack.py wlan1 wlan0 eth0 "Shabab" -t 88:83:22:82:93:CC
   ```
   or with PCAP output:
   ```
-  sudo ./krack_all_zero_tk.py wlan1 wlan0 eth0 "Shabab" -t 88:83:22:82:93:CC -p "test.pcap"
+  sudo ./attack.py wlan1 wlan0 eth0 "Shabab" -t 88:83:22:82:93:CC -p "test.pcap"
   ```
   * `wlan1`: interface that listens and injects packets on the real channel
   * `wlan0`: interface that runs the Rogue AP
